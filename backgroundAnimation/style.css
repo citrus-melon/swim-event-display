@@ -1,0 +1,11 @@
+body {
+  background-size: 200% 100%;
+  background-image: linear-gradient(to left, coral 50%, teal 50%);
+  -webkit-transition: background-position 1s;
+  -moz-transition: background-position 1s;
+  transition: background-position 1s;
+}
+
+body:hover {
+  background-position: 0 -100%;
+}

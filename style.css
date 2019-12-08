@@ -1,0 +1,13 @@
+.container {
+  text-align: center;
+  font-family: 'Roboto', sans-serif;
+  color: white;
+  margin-top: 10%;
+}
+h1 {
+  font-size: 20vw;
+  margin: 0;
+}
+.customMsg {
+  font-size: 3vw;
+}
