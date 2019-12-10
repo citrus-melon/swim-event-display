@@ -1,0 +1,15 @@
+Clicked{
+    Check if already animating {
+        Reset the timer
+    } else {
+        Set to animating
+        Change color to same
+        Disable swipe animation
+        swipe
+        enable animation
+        Change color to different
+        play sound
+        Swipe
+        Set timer to set not animating
+    }
+}

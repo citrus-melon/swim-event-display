@@ -1,27 +1,23 @@
-var swipe2right = false;
-var othercolor = "coral";
-var timer;
-var dontAnimate = false
+let swipe2right = false,
+othercolor = "coral",
+timer,
+currentlyAnimating = false;
 
-var backgroundanimate = () => {
-  if (dontAnimate) return;
-  dontAnimate = true;
-  var newcolor = randomColor({luminosity:'bright'});
-  if (swipe2right) {
-    document.body.style.backgroundPosition = "left";
-    swipe2right = false;
-    timer = window.setTimeout(function() {
-      document.body.style.backgroundImage = 'linear-gradient(to left, ' + newcolor + ' 50%, ' + othercolor + ' 50% )';
-      othercolor = newcolor;
-      dontAnimate = false;
-    }, 1000);
+const backgroundanimate = () => {
+  if (currentlyAnimating) { //reset the debounce timer to wait until pressing stops
+    
   } else {
-    swipe2right = true;  
-    document.body.style.backgroundPosition = "right";
-    timer = window.setTimeout(function() {
-      document.body.style.backgroundImage = 'linear-gradient(to left, ' + othercolor + ' 50%, ' + newcolor + ' 50% )';
-      othercolor = newcolor;
-      dontAnimate = false
+    currentlyAnimating = true;
+    let newcolor = randomColor({luminosity:'bright'}); // generate new color
+    // change both colors to be the same to hide reset
+    // disable the animation effect for reset
+    document.body.style.backgroundPosition = "left"; // reset position of background
+    // enable animation effect
+    // update background colors for next animation
+    // make notification sound
+    document.body.style.backgroundPosition = "right"; // Animate/swipe the background
+    timer = window.setTimeout(() => { 
+      currentlyAnimating = false // set debounce timer
     }, 1000);
   }
 }
