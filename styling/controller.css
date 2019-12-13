@@ -1,0 +1,22 @@
+.grid-container {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr 1fr 1fr 1fr;
+    grid-template-rows: 1.5fr 1fr 0.5fr 1fr 0.5fr 0.5fr;
+    grid-template-areas: ". . . . . ." "leftBtn leftBtn currentEvent currentEvent rightBtn rightBtn" "toggleEvent toggleEvent toggleEvent toggleEvent toggleEvent toggleEvent" "recordBtn recordBtn msgBox msgBox msgBox msgBox" "toggleSFX toggleSFX toggleSFX toggleTTS toggleTTS toggleTTS" ". . . . . .";
+  }
+  
+  .leftBtn { grid-area: leftBtn; }
+  
+  .rightBtn { grid-area: rightBtn; }
+  
+  .currentEvent { grid-area: currentEvent; }
+  
+  .toggleEvent { grid-area: toggleEvent; }
+  
+  .recordBtn { grid-area: recordBtn; }
+  
+  .msgBox { grid-area: msgBox; }
+  
+  .toggleSFX { grid-area: toggleSFX; }
+  
+  .toggleTTS { grid-area: toggleTTS; }
