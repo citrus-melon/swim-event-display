@@ -4,18 +4,46 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>Swim Meet Event Display</title>
+  <link href="https://fonts.googleapis.com/css?family=Comfortaa&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
   <link rel="stylesheet" href="styling/controller.css">
 </head>
 <body>
 <div class="gridContainer">
-  <div class="header"><h1>Event Display controller</h1></div>
-  <div class="currentEvent gridItem"></div>
-  <div class="leftBtn gridItem"></div>
-  <div class="rightBtn gridItem"></div>
-  <div class="recordBtn gridItem"></div>
-  <div class="msgBox gridItem"></div>
-  <div class="toggleSFX gridItem"></div>
-  <div class="toggleTTS gridItem"></div>
+  <div class="header">
+    <div class="iconWrapper">
+      <i class="material-icons">close</i>
+      <i class="material-icons">info_outline</i>
+    </div>
+    <h1 class="appTitle">Swim Event Display</h1>
+  </div>
+  <div class="currentEvent gridItem">
+    <h1 class="bigText">36</h1>
+  </div>
+  <div class="leftBtn gridItem">
+    <h1 class="bigText">⯇</h1>
+  </div>
+  <div class="rightBtn gridItem">
+    <h1 class="bigText">⯈</h1>
+  </div>
+  <div class="recordBtn gridItem">
+    <i class="material-icons bigText">
+      keyboard_voice
+    </i>
+  </div>
+  <textarea class="msgBox gridItem" placeholder="Type a custom message here..."></textarea>
+  <div class="toggleSFX gridItem">
+    <span>
+      <i class="material-icons btnIcon">notifications</i>
+      Sound Effects
+    </span>
+  </div>
+  <div class="toggleTTS gridItem">
+    <span>
+      <i class="material-icons btnIcon">message</i>
+       Speech Effects
+    </span>
+  </div>
 </div>
 <script  src="scripts/controller.js"></script>
 </body>

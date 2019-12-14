@@ -2,6 +2,7 @@
     box-sizing: border-box;
     padding: 0;
     margin: 0;
+    font-family: Arial, Helvetica, sans-serif;
 }
 
 .gridContainer {
@@ -9,7 +10,7 @@
     height: 100vh;
     padding: 10px;
     display: grid;
-    grid-gap: 10px 5px;
+    gap: 15px 5px;
     grid-template-columns: 1fr 1fr 1fr 1fr 1fr 1fr;
     grid-template-rows: 1fr 1fr 1fr 0.75fr 0.5fr;
     grid-template-areas: "header header header header header header"
@@ -20,15 +21,67 @@
 }
 
 .gridItem {
-    background-color: grey;
+    background-color: lightgray;
     border-radius: 10px;
 }
 
 .header {grid-area: header; }
 .leftBtn { grid-area: leftBtn; }
 .rightBtn { grid-area: rightBtn; }
-.currentEvent { grid-area: currentEvent; }
+.currentEvent { grid-area: currentEvent;
+    font-family: 'Comfortaa', Arial, Helvetica, sans-serif;
+}
 .recordBtn { grid-area: recordBtn; }
 .msgBox { grid-area: msgBox; }
 .toggleSFX { grid-area: toggleSFX; }
 .toggleTTS { grid-area: toggleTTS; }
+
+.iconWrapper {
+    display: flex;
+    flex-direction: row-reverse;
+    margin-bottom: 20px;
+}
+
+.iconWrapper .material-icons {
+    font-size: 36px;
+    color: rgba(0, 0, 0, 0.54);
+}
+
+.currentEvent, .leftBtn, .rightBtn, .recordBtn {
+    display: flex;
+    font-size: 7vh;
+}
+.bigText {
+    margin:auto;
+}
+
+.recordBtn .bigText {
+    font-size: 9vh;
+}
+
+.msgBox {
+    border: none;
+    outline: none;
+    font-size: 20px;
+    padding: 10px;
+    resize: none;
+}
+
+.toggleSFX, .toggleTTS {
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    font-size: 3vh;
+}
+
+.btnIcon {
+    font-size: 6vh;
+    float: left;
+    margin: 4px;
+}
+
+.appTitle {
+    font-family: 'Comfortaa', Arial, Helvetica, sans-serif;
+    text-align: center;
+    color: darkcyan;
+}
