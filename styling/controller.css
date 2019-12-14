@@ -5,15 +5,23 @@
 }
 
 .gridContainer {
-    padding: 10px;
-    display: grid;
-    grid-column-gap: 5px;
-    grid-row-gap: 10px;
-    grid-template-columns: 1fr 1fr 1fr 1fr 1fr 1fr;
-    grid-template-rows: 1fr 1fr 1fr 0.75fr 0.5fr;
-    grid-template-areas: "header header header header header header" "currentEvent currentEvent currentEvent currentEvent currentEvent currentEvent" "leftBtn leftBtn leftBtn rightBtn rightBtn rightBtn" "recordBtn recordBtn msgBox msgBox msgBox msgBox" "toggleSFX toggleSFX toggleSFX toggleTTS toggleTTS toggleTTS";
     width: 100vw;
     height: 100vh;
+    padding: 10px;
+    display: grid;
+    grid-gap: 10px 5px;
+    grid-template-columns: 1fr 1fr 1fr 1fr 1fr 1fr;
+    grid-template-rows: 1fr 1fr 1fr 0.75fr 0.5fr;
+    grid-template-areas: "header header header header header header"
+    "currentEvent currentEvent currentEvent currentEvent currentEvent currentEvent"
+    "leftBtn leftBtn leftBtn rightBtn rightBtn rightBtn"
+    "recordBtn recordBtn msgBox msgBox msgBox msgBox"
+    "toggleSFX toggleSFX toggleSFX toggleTTS toggleTTS toggleTTS";
+}
+
+.gridItem {
+    background-color: grey;
+    border-radius: 10px;
 }
 
 .header {grid-area: header; }
@@ -24,8 +32,3 @@
 .msgBox { grid-area: msgBox; }
 .toggleSFX { grid-area: toggleSFX; }
 .toggleTTS { grid-area: toggleTTS; }
-
-.gridItem {
-    background-color: grey;
-    border-radius: 10px;
-}
