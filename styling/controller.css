@@ -84,3 +84,10 @@
     margin: 4px;
 }
 
+/* Activated state */
+
+@media (any-hover: hover) {
+    .gridItem:hover {
+       background-color: gray;
+    }
+}
