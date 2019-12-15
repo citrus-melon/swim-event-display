@@ -55,6 +55,11 @@
     color: darkcyan;
 }
 
+.hiddenInput {
+    height:0;
+    overflow: hidden;
+}
+
 .bigText {
     margin:auto;
 }
@@ -91,7 +96,12 @@
 
 /* Active state */
 
-.gridItem:active {
+.gridItem.activated {
+    background-color: gray;
+    color: white;
+}
+
+.gridItem:active, .active {
     background-color: teal;
     color: white;
 }
@@ -100,9 +110,4 @@
     background-color: white;
     border: 2px solid gray;
     color: #212121;
-}
-
-.gridItem.activated {
-    background-color: gray;
-    color: white;
 }

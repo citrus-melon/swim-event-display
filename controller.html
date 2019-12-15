@@ -9,6 +9,7 @@
   <link rel="stylesheet" href="styling/controller.css">
 </head>
 <body>
+<div class="hiddenInput"><input type="number" id="hiddenNumber"></div>
 <div class="gridContainer">
   <div class="header">
     <div class="iconWrapper">
@@ -18,7 +19,7 @@
     <h1 class="appTitle">Swim Event Display</h1>
   </div>
   <div class="currentEvent gridItem">
-    <h1 class="bigText">36</h1>
+    <h1 class="bigText" id="currentEvent">1</h1>
   </div>
   <div class="leftBtn gridItem">
     <h1 class="bigText">⯇</h1>
@@ -32,11 +33,11 @@
     </i>
   </div>
   <textarea class="msgBox gridItem" placeholder="Type a custom message here..."></textarea>
-  <div class="toggleSFX gridItem">
+  <div class=" activated toggleSFX gridItem">
     <i class="material-icons btnIcon">notifications</i>
     Sound Effects
   </div>
-  <div class="toggleTTS gridItem">
+  <div class="activated toggleTTS gridItem">
     <i class="material-icons btnIcon">message</i>
     Speech Effects
   </div>
