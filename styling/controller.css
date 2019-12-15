@@ -2,15 +2,15 @@
     box-sizing: border-box;
     padding: 0;
     margin: 0;
-    font-family: Arial, Helvetica, sans-serif;
 }
 
-.gridContainer { /* main grid wrapper initialization */
+.gridContainer {
     width: 100vw;
     height: 100vh;
     padding: 10px;
     display: grid;
     gap: 15px 5px;
+    font-family: Arial, Helvetica, sans-serif;
     grid-template-columns: 1fr 1fr 1fr 1fr 1fr 1fr;
     grid-template-rows: 1fr 1fr 1fr 0.75fr 0.5fr;
     grid-template-areas: "header header header header header header"
@@ -20,17 +20,18 @@
     "toggleSFX toggleSFX toggleSFX toggleTTS toggleTTS toggleTTS";
 }
 
-.gridItem { /* format grid boxes */
+.gridItem {
     background-color: lightgray;
     border-radius: 10px;
+    display: flex;
+    font-size: 7vh;
+    color: #212121;
 }
 
 .header {grid-area: header; } /* name grid areas */
 .leftBtn { grid-area: leftBtn; }
 .rightBtn { grid-area: rightBtn; }
-.currentEvent { grid-area: currentEvent;
-    font-family: 'Comfortaa', Arial, Helvetica, sans-serif;
-}
+.currentEvent { grid-area: currentEvent; }
 .recordBtn { grid-area: recordBtn; }
 .msgBox { grid-area: msgBox; }
 .toggleSFX { grid-area: toggleSFX; }
@@ -47,19 +48,24 @@
     color: rgba(0, 0, 0, 0.54);
 }
 
-.currentEvent, .leftBtn, .rightBtn, .recordBtn { /* wrapper for positioning big text */
-    display: flex;
-    font-size: 7vh;
+.appTitle {
+    font-family: 'Comfortaa', Arial, Helvetica, sans-serif;
+    text-align: center;
+    color: darkcyan;
 }
-.bigText { /* center Event big text */
+
+.bigText {
     margin:auto;
+}
+.currentEvent {
+    font-family: 'Comfortaa';
 }
 
 .recordBtn .bigText { /* Microphone Icon */
     font-size: 9vh;
 }
 
-.msgBox { /* Custom message textarea */
+.msgBox {
     border: none;
     outline: none;
     font-size: 20px;
@@ -68,20 +74,13 @@
 }
 
 .toggleSFX, .toggleTTS {
-    display: flex; /* Positioning content of bottom buttons */
     align-items: center;
     justify-content: center;
     font-size: 1.25em;
     padding: 4px;
 }
-
 .btnIcon { /* bottom button icons */
     font-size: 6vh;
     margin: 4px;
 }
 
-.appTitle {
-    font-family: 'Comfortaa', Arial, Helvetica, sans-serif;
-    text-align: center;
-    color: darkcyan;
-}
