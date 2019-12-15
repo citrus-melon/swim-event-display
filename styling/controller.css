@@ -5,12 +5,13 @@
 }
 
 .gridContainer {
+    user-select: none;
+    font-family: Arial, Helvetica, sans-serif;
     width: 100vw;
     height: 100vh;
     padding: 10px;
     display: grid;
-    gap: 15px 5px;
-    font-family: Arial, Helvetica, sans-serif;
+    gap: 15px 5px;    
     grid-template-columns: 1fr 1fr 1fr 1fr 1fr 1fr;
     grid-template-rows: 1fr 1fr 1fr 0.75fr 0.5fr;
     grid-template-areas: "header header header header header header"
@@ -84,10 +85,24 @@
     margin: 4px;
 }
 
-/* Activated state */
+/* Hover state */
 
-@media (any-hover: hover) {
-    .gridItem:hover {
-       background-color: gray;
-    }
+
+
+/* Active state */
+
+.gridItem:active {
+    background-color: teal;
+    color: white;
+}
+
+.msgBox:focus {
+    background-color: white;
+    border: 2px solid gray;
+    color: #212121;
+}
+
+.gridItem.activated {
+    background-color: gray;
+    color: white;
 }
