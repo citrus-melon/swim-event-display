@@ -17,22 +17,18 @@ const localState = {
     hideNumber: false
 }
 
-let nextNumber = () => {
+const nextNumber = () => {
     localState.number ++;
     numberDisplay.innerText = localState.number;
     socket.send(localState.number)
 }
-let prevNumber = () => {
+const prevNumber = () => {
     localState.number --;
     numberDisplay.innerText = localState.number;
     socket.send(localState.number)
 }
 
-let updateNumber = () => {
-
-}
-
-let toggleSFX = () => {
+const toggleSFX = () => {
     localState.sfx = !localState.sfx;
     if (localState.sfx) {
         sfxBtn.classList.add('activated')
@@ -40,7 +36,7 @@ let toggleSFX = () => {
         sfxBtn.classList.remove('activated')
     }
 }
-let toggleTTS = () => {
+const toggleTTS = () => {
     localState.tts = !localState.tts;
     if (localState.tts) {
         ttsBtn.classList.add('activated')
@@ -49,9 +45,10 @@ let toggleTTS = () => {
     }
 }
 
-let handleNumberClick = (e) => {
+const handleNumberClick = (e) => {
 if (e.target !== numberBtn) { // directly edit event number
     hiddenInput.value = localState.number;
+    hiddenInput.select()
     numberBtn.classList.add('active');
     hiddenInput.focus()
 } else { // toggle show event number
@@ -72,13 +69,16 @@ numberBtn.addEventListener('click', handleNumberClick);
 // hidden input stuff
 hiddenInput.addEventListener('input', () => {
     numberDisplay.innerText = hiddenInput.value;
-}) 
+})
+
 hiddenInput.addEventListener('change', () => {
     hiddenInput.blur();
     localState.number = hiddenInput.value;
     if (hiddenInput.value == '') localState.number = 0;
     numberDisplay.innerText = localState.number;
+    socket.send(localState.number)
 })
+
 hiddenInput.addEventListener('blur', () => {
     numberBtn.classList.remove('active');
 })
