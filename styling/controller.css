@@ -15,7 +15,7 @@
     grid-template-columns: 1fr 1fr 1fr 1fr 1fr 1fr;
     grid-template-rows: 1fr 1fr 1fr 0.75fr 0.5fr;
     grid-template-areas: "header header header header header header"
-    "currentEvent currentEvent currentEvent currentEvent currentEvent currentEvent"
+    "currentNumber currentNumber currentNumber currentNumber currentNumber currentNumber"
     "leftBtn leftBtn leftBtn rightBtn rightBtn rightBtn"
     "recordBtn recordBtn msgBox msgBox msgBox msgBox"
     "toggleSFX toggleSFX toggleSFX toggleTTS toggleTTS toggleTTS";
@@ -32,7 +32,7 @@
 .header {grid-area: header; } /* name grid areas */
 .leftBtn { grid-area: leftBtn; }
 .rightBtn { grid-area: rightBtn; }
-.currentEvent { grid-area: currentEvent; }
+.currentNumber { grid-area: currentNumber; }
 .recordBtn { grid-area: recordBtn; }
 .msgBox { grid-area: msgBox; }
 .toggleSFX { grid-area: toggleSFX; }
@@ -63,7 +63,7 @@
 .bigText {
     margin:auto;
 }
-.currentEvent {
+.currentNumber {
     font-family: 'Comfortaa';
 }
 
