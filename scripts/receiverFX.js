@@ -3,11 +3,12 @@ othercolor = "teal",
 timer,
 currentlyAnimating = false;
 
-const backgroundanimate = () => {
+const backgroundAnimate = () => {
   if (currentlyAnimating) { //reset the debounce timer to wait until pressing stops
     window.clearTimeout(timer);
     timer = window.setTimeout(() => { 
-      currentlyAnimating = false
+      currentlyAnimating = false;
+      handleTTS();
     }, 1000);
   } else {
     currentlyAnimating = true;
@@ -20,10 +21,20 @@ const backgroundanimate = () => {
     // update background colors for next animation
     document.body.style.backgroundImage = 'linear-gradient(to right, ' + othercolor + ' 50%, ' + newcolor + ' 50% )';
     othercolor = newcolor; // update the othercolor
-    document.getElementById("sound").play(); // make notification sound
+    handleSFX()
     document.body.style.backgroundPosition = "right"; // Animate (swipe) the background
     timer = window.setTimeout(() => { 
-      currentlyAnimating = false // set debounce timer
+      currentlyAnimating = false; // set debounce timer
+      handleTTS();
     }, 1000);
   }
+}
+
+const handleSFX = () => {
+  document.getElementById("sound").play();
+}
+
+const handleTTS = () => {
+  let utterThis = new SpeechSynthesisUtterance('event, ' + currentEvent);
+  window.speechSynthesis.speak(utterThis)
 }
