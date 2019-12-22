@@ -35,14 +35,17 @@ socket.onmessage = (event) => {
     var msg = JSON.parse(event.data);
     switch(msg.type) {
       case "number":
-        clientID = msg.id;
-        setUsername();
+        localState.number = msg.value;
         break;
       case "all":
-        text = "<b>User <em>" + msg.name + "</em> signed in at " + timeStr + "</b><br>";
+        localState.number = msg.value.number;
+        localState.tts = msg.value.tts;
+        localState.sfx = msg.value.sfx;
+        localState.msg = msg.value.msg;
+        localState.hideNumber = msg.value.hideNumber;
         break;
       case "request":
-        text = "(" + timeStr + ") <b>" + msg.name + "</b>: " + msg.text + "<br>";
+        //add stuff here
         break;
     }
 }
