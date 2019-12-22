@@ -48,7 +48,11 @@ socket.onmessage = (event) => {
         updateDOM();
         break;
       case "request":
-        //add stuff here
+        socket.sendGeneric();
         break;
     }
+}
+
+socket.onopen = () => {
+    socket.requestUpdate()
 }
