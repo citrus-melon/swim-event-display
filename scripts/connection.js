@@ -36,6 +36,7 @@ socket.onmessage = (event) => {
     switch(msg.type) {
       case "number":
         localState.number = msg.value;
+        numberDisplay.innerText = localState.number;
         break;
       case "all":
         localState.number = msg.value.number;

@@ -9,13 +9,11 @@ sfxBtn = document.getElementsByClassName('toggleSFX')[0],
 ttsBtn = document.getElementsByClassName('toggleTTS')[0];
 
 const nextNumber = () => {
-    localState.number ++;
-    numberDisplay.innerText = localState.number;
+    numberDisplay.innerText = ++localState.number;
     socket.sendNumber()
 }
 const prevNumber = () => {
-    localState.number --;
-    numberDisplay.innerText = localState.number;
+    numberDisplay.innerText = --localState.number;
     socket.sendNumber(localState.number)
 }
 
