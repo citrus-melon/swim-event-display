@@ -44,6 +44,7 @@ socket.onmessage = (event) => {
         localState.sfx = msg.value.sfx;
         localState.msg = msg.value.msg;
         localState.hideNumber = msg.value.hideNumber;
+        updateDOM();
         break;
       case "request":
         //add stuff here

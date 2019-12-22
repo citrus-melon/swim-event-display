@@ -17,8 +17,29 @@ const prevNumber = () => {
     socket.sendNumber(localState.number)
 }
 
+const updateDOM = () => {
+    if (localState.hideNumber) {
+        numberBtn.classList.add('activated')
+    } else {
+    numberBtn.classList.remove('activated')
+    }
+    if (localState.sfx) {
+        sfxBtn.classList.add('activated')
+    } else {
+        sfxBtn.classList.remove('activated')
+    }
+    if (localState.tts) {
+        ttsBtn.classList.add('activated')
+    } else {
+        ttsBtn.classList.remove('activated')
+    }
+    numberDisplay.innerText = localState.number;
+    msgBox.value = localState.msg;
+}
+
 const toggleSFX = () => {
     localState.sfx = !localState.sfx;
+    socket.sendGeneric();
     if (localState.sfx) {
         sfxBtn.classList.add('activated')
     } else {
@@ -27,6 +48,7 @@ const toggleSFX = () => {
 }
 const toggleTTS = () => {
     localState.tts = !localState.tts;
+    socket.sendGeneric();
     if (localState.tts) {
         ttsBtn.classList.add('activated')
     } else {
@@ -42,6 +64,7 @@ if (e.target !== numberBtn) { // directly edit event number
     hiddenInput.focus()
 } else { // toggle show event number
     localState.hideNumber = !localState.hideNumber;
+    socket.sendGeneric();
     if (localState.hideNumber) {
             numberBtn.classList.add('activated')
     } else {
@@ -54,8 +77,12 @@ leftBtn.addEventListener('click', prevNumber);
 sfxBtn.addEventListener('click', toggleSFX);
 ttsBtn.addEventListener('click', toggleTTS);
 numberBtn.addEventListener('click', handleNumberClick);
+msgBox.addEventListener('input', () => {
+    localState.msg = msgBox.value;
+    socket.sendGeneric()
+})
 
-// hidden input stuff
+// hidden input event listeners
 hiddenInput.addEventListener('input', () => {
     numberDisplay.innerText = hiddenInput.value;
 })
