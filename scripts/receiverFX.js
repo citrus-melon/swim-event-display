@@ -30,10 +30,10 @@ const backgroundAnimate = () => {
 }
 
 const handleSFX = () => {
-  document.getElementById("sound").play();
+  if (localState.sfx) document.getElementById("sound").play();
 }
 
 const handleTTS = () => {
   let utterThis = new SpeechSynthesisUtterance('event, ' + localState.number);
-  window.speechSynthesis.speak(utterThis)
+  if (localState.tts) window.speechSynthesis.speak(utterThis)
 }
