@@ -1,5 +1,4 @@
-let swipe2right = false,
-othercolor = "teal",
+let othercolor = "teal",
 timer,
 currentlyAnimating = false;
 
@@ -35,6 +34,6 @@ const handleSFX = () => {
 }
 
 const handleTTS = () => {
-  let utterThis = new SpeechSynthesisUtterance('event, ' + currentEvent);
+  let utterThis = new SpeechSynthesisUtterance('event, ' + localState.number);
   window.speechSynthesis.speak(utterThis)
 }

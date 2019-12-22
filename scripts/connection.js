@@ -37,6 +37,7 @@ socket.onmessage = (event) => {
       case "number":
         localState.number = msg.value;
         numberDisplay.innerText = localState.number;
+        if (typeof backgroundAnimate == "function") backgroundAnimate();
         break;
       case "all":
         localState.number = msg.value.number;
