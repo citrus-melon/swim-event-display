@@ -57,7 +57,7 @@ const toggleTTS = () => {
 }
 
 const handleNumberClick = (e) => {
-if (e.target !== numberBtn) { // directly edit event number
+if (e.target == numberDisplay) { // directly edit event number
     hiddenInput.value = localState.number;
     hiddenInput.select()
     numberBtn.classList.add('active');
