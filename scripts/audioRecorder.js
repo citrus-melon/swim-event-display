@@ -14,10 +14,7 @@ let initRecorder = () => {
 }
 
 let onRecordingReady = (e) => {
-    var audio = document.getElementById('audio');
-  // e.data contains a blob representing the recording
-  audio.src = URL.createObjectURL(e.data);
-  audio.play();
+    socket.send(e.data);
 }
 
 recordBtn.addEventListener('touchstart', (e) => {

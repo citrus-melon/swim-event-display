@@ -1,6 +1,7 @@
 const numberDisplay = document.getElementsByClassName("eventNum")[0],
 msgBox = document.getElementsByClassName("customMsg")[0],
-numberBox = document.getElementsByClassName("bigText")[0];
+numberBox = document.getElementsByClassName("bigText")[0],
+recordedVoice = document.getElementById("recordedVoice");
 
 document.onkeydown = (e) => {
   if(e.key == "ArrowRight") {
@@ -22,4 +23,10 @@ const updateDOM = () => {
   } else {
     numberBox.style.display = "block"
   }
+}
+
+const playRecorded = (e) => {
+  let audioURL = URL.createObjectURL(e.data);
+  recordedVoice.src = audioURL;
+  recordedVoice.play();
 }
