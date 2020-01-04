@@ -21,6 +21,12 @@
     "toggleSFX toggleSFX toggleSFX toggleTTS toggleTTS toggleTTS";
 }
 
+@media only screen and (max-height: 450px) {
+    .gridContainer {
+        height: 100%;
+    }
+}
+
 .gridItem {
     background-color: lightgray;
     border-radius: 10px;
