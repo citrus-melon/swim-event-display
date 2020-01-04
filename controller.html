@@ -45,6 +45,13 @@
 <audio id="audio"></audio>
 <script src="scripts/connection.js" async></script>
 <script  src="scripts/controller.js"></script>
+<script>
+  if (!window.MediaRecorder) {
+    document.write(
+    decodeURI('%3Cscript defer src="/scripts/polyfill.js">%3C/script>')
+    )
+  }
+</script>
 <script src="scripts/audioRecorder.js"></script>
 </body>
 </html>
