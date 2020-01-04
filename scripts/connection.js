@@ -57,6 +57,14 @@ socket.onmessage = (event) => {
     }
 }
 
+socket.onerror = (e) => {
+    alert("A connection error has occurred, please reload the page")
+}
+
+socket.onclose = (e) => {
+    alert("The server was disconnected, please reload the page\nDetails: " + e.reason)
+}
+
 socket.onopen = () => {
     socket.requestUpdate()
 }

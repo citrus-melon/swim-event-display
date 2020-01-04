@@ -10,7 +10,7 @@ let initRecorder = () => {
         recorder = new MediaRecorder(mediaStream);
         recorder.addEventListener('dataavailable', onRecordingReady);
     })
-    .catch((err) => { window.alert("error:\n" + err.message); });
+    .catch((err) => { window.alert("Audio recording error:\n" + err.message); });
 }
 
 let onRecordingReady = (e) => {
