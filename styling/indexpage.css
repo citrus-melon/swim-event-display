@@ -34,6 +34,11 @@ input {
     font-size: 18px;
 }
 
+a {
+    color: inherit;
+    text-decoration: inherit;
+}
+
 .button {
     padding: 20px;
     margin-top: 10px;
