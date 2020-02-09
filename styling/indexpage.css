@@ -1,0 +1,50 @@
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+html, body {
+    height: 100%;
+}
+
+body {
+    padding: 20px;
+    font-family: Arial, Helvetica, sans-serif;
+    text-align: center;
+}
+
+h1 {
+    color: darkcyan;
+    margin: 10px 0;
+}
+
+p {
+    margin-bottom: 20px;
+    color: grey;
+}
+
+input {
+    width: 100%;
+    padding: 10px;
+    background-color: lightgray;
+    color:#212121;
+    border-radius: 10px;
+    border:none;
+    font-size: 18px;
+}
+
+.button {
+    padding: 20px;
+    margin-top: 10px;
+    color: white;
+    border-radius: 10px;
+}
+
+#control {
+    background-color: darkturquoise;
+}
+
+#receive {
+    background-color: coral;
+}
