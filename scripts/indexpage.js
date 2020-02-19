@@ -1,17 +1,25 @@
 roomInput = document.getElementById("roomInput");
 btnWrapper = document.getElementById("btnWrapper");
+controlBtn = document.getElementById("control");
+receiveBtn = document.getElementById("receive");
 
-if (localStorage.getItem("room")) {
-    roomInput.value = decodeURIComponent(localStorage.getItem("room"));
+const handleInput = () => {
     if (roomInput.value) btnWrapper.style.display = "block"; else btnWrapper.style.display = "none";
+    controlBtn.href = "controller.html?" + encodeURIComponent(roomInput.value);
+    receiveBtn.href = "receiver.html?" + encodeURIComponent(roomInput.value);
 }
 
-roomInput.addEventListener('input', () => {
-    localStorage.setItem("room", encodeURIComponent(roomInput.value));
-    if (roomInput.value) btnWrapper.style.display = "block"; else btnWrapper.style.display = "none";
-})
+if (window.location.search) {
+    roomInput.value = decodeURIComponent(window.location.search).substring(1);
+    handleInput();
+} else if (localStorage.getItem("room")) {
+    roomInput.value = decodeURIComponent(localStorage.getItem("room"));
+    handleInput();
+}
+
+roomInput.addEventListener('input', handleInput);
 
 //hide mobile keyboard on enter...
 roomInput.addEventListener('change', () => {
     roomInput.blur();
-})
+});
