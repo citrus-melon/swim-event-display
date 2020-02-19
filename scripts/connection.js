@@ -1,4 +1,14 @@
-const socket = new WebSocket ('wss://websocket-room.now.sh/HEYHEYHAYDEN');
+let room;
+if (window.location.search) {
+    room = window.location.search.substring(1);
+    localStorage.setItem("room", room);
+} else if (localStorage.getItem("room")) {
+    room = localStorage.getItem("room");
+} else {
+    window.location = "citrus-melon.github.io/swim-event-display";
+}
+
+const socket = new WebSocket ('wss://websocket-room.now.sh/swimeventdisplay_'+room);
 
 const localState = {
     number: 1,
