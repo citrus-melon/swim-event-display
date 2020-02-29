@@ -12,8 +12,8 @@ const handleInput = () => {
 if (window.location.search) {
     roomInput.value = decodeURIComponent(window.location.search).substring(1);
     handleInput();
-} else if (localStorage.getItem("room")) {
-    roomInput.value = decodeURIComponent(localStorage.getItem("room"));
+} else if (sessionStorage.getItem("room")) {
+    roomInput.value = decodeURIComponent(sessionStorage.getItem("room"));
     handleInput();
 }
 

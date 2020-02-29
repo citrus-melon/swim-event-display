@@ -1,11 +1,11 @@
 let room;
 if (window.location.search) {
     room = window.location.search.substring(1);
-    localStorage.setItem("room", room);
-} else if (localStorage.getItem("room")) {
-    room = localStorage.getItem("room");
+    sessionStorage.setItem("room", room);
+} else if (sessionStorage.getItem("room")) {
+    room = sessionStorage.getItem("room");
 } else {
-    window.location = "citrus-melon.github.io/swim-event-display";
+    window.location.replace("index.html");
 }
 
 const localState = {
