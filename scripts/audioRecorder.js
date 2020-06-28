@@ -18,30 +18,28 @@ let onRecordingReady = (e) => {
 }
 
 recordBtn.addEventListener('touchstart', (e) => {
-    if (!recorder) {
-        initRecorder();
-        return;
-    }
-    recorder.start();
-    console.log('start');
     recordBtn.classList.add('active');
     e.preventDefault()
+    if (recorder) {
+        recorder.start();
+    } else {
+        initRecorder();
+    } 
 })
 recordBtn.addEventListener('touchend', (e) => {
-    if (recorder.state == 'recording') recorder.stop();
-    console.log('stop');
     recordBtn.classList.remove('active');
     e.preventDefault()
+    if (!recorder) return;
+    if (recorder.state == 'recording') recorder.stop();
 })
 recordBtn.addEventListener('mousedown', (e) => {
-    if (!recorder) {
+    if (recorder) {
+        recorder.start();
+    } else {
         initRecorder();
-        return;
-    }
-    recorder.start();
-    console.log('start');
+    } 
 })
 recordBtn.addEventListener('mouseup', (e) => {
+    if (!recorder) return;
     if (recorder.state == 'recording') recorder.stop();
-    console.log('stop');
 })
