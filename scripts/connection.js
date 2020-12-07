@@ -72,7 +72,7 @@ const initializeConnection = () => {
     
     socket.onclose = (e) => {
         setTimeout(() => {
-            socket = new WebSocket ('wss://websocket-room.now.sh/swimeventdisplay_'+room);
+            socket = new WebSocket ('wss://potent-debonair-leptoceratops.glitch.me/swimeventdisplay_'+room);
             initializeConnection();
             console.log('reconncet!');
         }, 100);
@@ -83,5 +83,5 @@ const initializeConnection = () => {
     }
 }
 
-let socket = new WebSocket ('wss://websocket-room.now.sh/swimeventdisplay_'+room);
+let socket = new WebSocket ('wss://potent-debonair-leptoceratops.glitch.me/swimeventdisplay_'+room);
 initializeConnection();
